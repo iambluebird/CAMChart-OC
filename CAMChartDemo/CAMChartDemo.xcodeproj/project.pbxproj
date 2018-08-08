@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CDB12AD2119F7AB00F5C733 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12AC2119F7AB00F5C733 /* AppDelegate.m */; };
+		9CDB12B02119F7AB00F5C733 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12AF2119F7AB00F5C733 /* ViewController.m */; };
+		9CDB12B32119F7AB00F5C733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB12B12119F7AB00F5C733 /* Main.storyboard */; };
+		9CDB12B52119F7AC00F5C733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB12B42119F7AC00F5C733 /* Assets.xcassets */; };
+		9CDB12B82119F7AC00F5C733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB12B62119F7AC00F5C733 /* LaunchScreen.storyboard */; };
+		9CDB12BB2119F7AC00F5C733 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12BA2119F7AC00F5C733 /* main.m */; };
+		9CDB12C82119F8C300F5C733 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12C72119F8C300F5C733 /* NavigationViewController.m */; };
+		9CDB12CB2119FD0600F5C733 /* LineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12CA2119FD0600F5C733 /* LineChartViewController.m */; };
+		9CDB12CE211A029D00F5C733 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12CD211A029D00F5C733 /* BaseViewController.m */; };
+		9CDB12D2211AEF1700F5C733 /* CoordinateAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12D1211AEF1700F5C733 /* CoordinateAxis.m */; };
+		9CDB12D5211AF0E700F5C733 /* CAMChartProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12D4211AF0E700F5C733 /* CAMChartProfile.m */; };
+		9CDB12D8211AF77A00F5C733 /* CAMChartProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12D7211AF77A00F5C733 /* CAMChartProfileManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9CDB12A82119F7AB00F5C733 /* CAMChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAMChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CDB12AB2119F7AB00F5C733 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9CDB12AC2119F7AB00F5C733 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9CDB12AE2119F7AB00F5C733 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9CDB12AF2119F7AB00F5C733 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9CDB12B22119F7AB00F5C733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9CDB12B42119F7AC00F5C733 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CDB12B72119F7AC00F5C733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9CDB12B92119F7AC00F5C733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CDB12BA2119F7AC00F5C733 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9CDB12C62119F8C300F5C733 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		9CDB12C72119F8C300F5C733 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		9CDB12C92119FD0600F5C733 /* LineChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineChartViewController.h; sourceTree = "<group>"; };
+		9CDB12CA2119FD0600F5C733 /* LineChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineChartViewController.m; sourceTree = "<group>"; };
+		9CDB12CC211A029D00F5C733 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9CDB12CD211A029D00F5C733 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9CDB12D0211AEF1700F5C733 /* CoordinateAxis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinateAxis.h; sourceTree = "<group>"; };
+		9CDB12D1211AEF1700F5C733 /* CoordinateAxis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoordinateAxis.m; sourceTree = "<group>"; };
+		9CDB12D3211AF0E700F5C733 /* CAMChartProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMChartProfile.h; sourceTree = "<group>"; };
+		9CDB12D4211AF0E700F5C733 /* CAMChartProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMChartProfile.m; sourceTree = "<group>"; };
+		9CDB12D6211AF77A00F5C733 /* CAMChartProfileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMChartProfileManager.h; sourceTree = "<group>"; };
+		9CDB12D7211AF77A00F5C733 /* CAMChartProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMChartProfileManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CDB12A52119F7AB00F5C733 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CDB129F2119F7AB00F5C733 = {
+			isa = PBXGroup;
+			children = (
+				9CDB12CF211AE41800F5C733 /* CAMChart */,
+				9CDB12AA2119F7AB00F5C733 /* CAMChartDemo */,
+				9CDB12A92119F7AB00F5C733 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CDB12A92119F7AB00F5C733 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CDB12A82119F7AB00F5C733 /* CAMChartDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CDB12AA2119F7AB00F5C733 /* CAMChartDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9CDB12C22119F80700F5C733 /* DemoViewControllers */,
+				9CDB12C12119F7F400F5C733 /* Startup */,
+			);
+			path = CAMChartDemo;
+			sourceTree = "<group>";
+		};
+		9CDB12C12119F7F400F5C733 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				9CDB12AB2119F7AB00F5C733 /* AppDelegate.h */,
+				9CDB12AC2119F7AB00F5C733 /* AppDelegate.m */,
+				9CDB12AE2119F7AB00F5C733 /* ViewController.h */,
+				9CDB12AF2119F7AB00F5C733 /* ViewController.m */,
+				9CDB12B12119F7AB00F5C733 /* Main.storyboard */,
+				9CDB12B42119F7AC00F5C733 /* Assets.xcassets */,
+				9CDB12B62119F7AC00F5C733 /* LaunchScreen.storyboard */,
+				9CDB12B92119F7AC00F5C733 /* Info.plist */,
+				9CDB12BA2119F7AC00F5C733 /* main.m */,
+			);
+			name = Startup;
+			sourceTree = "<group>";
+		};
+		9CDB12C22119F80700F5C733 /* DemoViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CDB12CC211A029D00F5C733 /* BaseViewController.h */,
+				9CDB12CD211A029D00F5C733 /* BaseViewController.m */,
+				9CDB12C62119F8C300F5C733 /* NavigationViewController.h */,
+				9CDB12C72119F8C300F5C733 /* NavigationViewController.m */,
+				9CDB12C92119FD0600F5C733 /* LineChartViewController.h */,
+				9CDB12CA2119FD0600F5C733 /* LineChartViewController.m */,
+			);
+			path = DemoViewControllers;
+			sourceTree = "<group>";
+		};
+		9CDB12CF211AE41800F5C733 /* CAMChart */ = {
+			isa = PBXGroup;
+			children = (
+				9CDB12D0211AEF1700F5C733 /* CoordinateAxis.h */,
+				9CDB12D1211AEF1700F5C733 /* CoordinateAxis.m */,
+				9CDB12D3211AF0E700F5C733 /* CAMChartProfile.h */,
+				9CDB12D4211AF0E700F5C733 /* CAMChartProfile.m */,
+				9CDB12D6211AF77A00F5C733 /* CAMChartProfileManager.h */,
+				9CDB12D7211AF77A00F5C733 /* CAMChartProfileManager.m */,
+			);
+			path = CAMChart;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CDB12A72119F7AB00F5C733 /* CAMChartDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CDB12BE2119F7AC00F5C733 /* Build configuration list for PBXNativeTarget "CAMChartDemo" */;
+			buildPhases = (
+				9CDB12A42119F7AB00F5C733 /* Sources */,
+				9CDB12A52119F7AB00F5C733 /* Frameworks */,
+				9CDB12A62119F7AB00F5C733 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CAMChartDemo;
+			productName = CAMChartDemo;
+			productReference = 9CDB12A82119F7AB00F5C733 /* CAMChartDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CDB12A02119F7AB00F5C733 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "欧阳峰";
+				TargetAttributes = {
+					9CDB12A72119F7AB00F5C733 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 9CDB12A32119F7AB00F5C733 /* Build configuration list for PBXProject "CAMChartDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CDB129F2119F7AB00F5C733;
+			productRefGroup = 9CDB12A92119F7AB00F5C733 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CDB12A72119F7AB00F5C733 /* CAMChartDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CDB12A62119F7AB00F5C733 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CDB12B82119F7AC00F5C733 /* LaunchScreen.storyboard in Resources */,
+				9CDB12B52119F7AC00F5C733 /* Assets.xcassets in Resources */,
+				9CDB12B32119F7AB00F5C733 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CDB12A42119F7AB00F5C733 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CDB12D5211AF0E700F5C733 /* CAMChartProfile.m in Sources */,
+				9CDB12B02119F7AB00F5C733 /* ViewController.m in Sources */,
+				9CDB12CE211A029D00F5C733 /* BaseViewController.m in Sources */,
+				9CDB12C82119F8C300F5C733 /* NavigationViewController.m in Sources */,
+				9CDB12D2211AEF1700F5C733 /* CoordinateAxis.m in Sources */,
+				9CDB12CB2119FD0600F5C733 /* LineChartViewController.m in Sources */,
+				9CDB12BB2119F7AC00F5C733 /* main.m in Sources */,
+				9CDB12AD2119F7AB00F5C733 /* AppDelegate.m in Sources */,
+				9CDB12D8211AF77A00F5C733 /* CAMChartProfileManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9CDB12B12119F7AB00F5C733 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CDB12B22119F7AB00F5C733 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9CDB12B62119F7AC00F5C733 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CDB12B72119F7AC00F5C733 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9CDB12BC2119F7AC00F5C733 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9CDB12BD2119F7AC00F5C733 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CDB12BF2119F7AC00F5C733 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4T85LNDJD2;
+				INFOPLIST_FILE = CAMChartDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cam.CAMChartDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CDB12C02119F7AC00F5C733 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4T85LNDJD2;
+				INFOPLIST_FILE = CAMChartDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cam.CAMChartDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CDB12A32119F7AB00F5C733 /* Build configuration list for PBXProject "CAMChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CDB12BC2119F7AC00F5C733 /* Debug */,
+				9CDB12BD2119F7AC00F5C733 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CDB12BE2119F7AC00F5C733 /* Build configuration list for PBXNativeTarget "CAMChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CDB12BF2119F7AC00F5C733 /* Debug */,
+				9CDB12C02119F7AC00F5C733 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CDB12A02119F7AB00F5C733 /* Project object */;
+}
