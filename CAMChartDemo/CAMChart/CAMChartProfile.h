@@ -6,11 +6,21 @@
 //  Copyright © 2018年 欧阳峰. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface CAMChartProfile : NSObject<NSMutableCopying>
 
 @property(nonatomic, assign) CGFloat margin;
+
+@property(nonatomic, strong) UIColor* themeColor;
+@property(nonatomic, strong) UIColor* backgroundColor;
+
+
+
+@property(nonatomic, assign) CGFloat axisLineWidth;
+@property(nonatomic, strong) UIColor* axisLineColor;
+@property(nonatomic, assign) CGFloat axisUnitFontSize;
+@property(nonatomic, strong) UIColor* axisUnitColor;
+
 
 @end

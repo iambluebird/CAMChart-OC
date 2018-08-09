@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CAMChartProfile.h"
 
-//typedef NS_ENUM(NSUInteger, CAMChartProfileThemeType) {
-//    CAMChartProfileThemeDefault = 0
-//};
+
 
 
 @interface CAMChartProfileManager : NSObject<NSCopying, NSMutableCopying>
@@ -19,7 +17,6 @@
 @property(nonatomic, strong) CAMChartProfile *defaultProfile;
 
 +(instancetype)shareInstance;
-//+(CAMChartProfileManager*)shareInstance;
 
 
 

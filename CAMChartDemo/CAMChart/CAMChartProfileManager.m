@@ -67,7 +67,14 @@ static id _instance = nil;
 - (CAMChartProfile *)defaultProfile{
     if(!_defaultProfile){
         _defaultProfile = [[CAMChartProfile alloc] init];
-        _defaultProfile.margin = 20;
+        
+        _defaultProfile.margin = 20.0f;
+        
+        _defaultProfile.backgroundColor = [UIColor whiteColor];
+        _defaultProfile.themeColor = [UIColor blueColor];
+        
+        _defaultProfile.axisLineWidth = 2.0f;
+        _defaultProfile.axisUnitFontSize = 11.0f;
     }
     return _defaultProfile;
 }
