@@ -8,6 +8,8 @@
 
 #import "CAMBaseChart.h"
 
+
+
 @implementation CAMBaseChart
 
 /*
@@ -22,7 +24,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupDefaultValues];
+        [self setupBaseDefaultValues];
     }
     return self;
 }
@@ -31,19 +33,12 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        [self setupDefaultValues];
+        [self setupBaseDefaultValues];
     }
     return self;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self setupDefaultValues];
-    }
-    return self;
-}
+
 
 
 
@@ -57,7 +52,7 @@
 
 
 
--(void)setupDefaultValues{
+-(void)setupBaseDefaultValues{
     self.clipsToBounds = YES;
     self.userInteractionEnabled = YES;
 }
@@ -65,6 +60,14 @@
 - (void)layoutSubviews{
     self.backgroundColor = self.chartProfile.backgroundColor;
     [super layoutSubviews];
+}
+
+
+
+
+
+- (void)drawChart{
+    [self doesNotRecognizeSelector:_cmd];
 }
 
 @end

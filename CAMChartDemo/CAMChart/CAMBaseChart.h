@@ -15,4 +15,11 @@
 
 @property(nonatomic, strong) CAMChartProfile* chartProfile;
 
+
+
+/**
+ 绘制统计图
+ */
+-(void)drawChart;
+
 @end

@@ -11,6 +11,9 @@
 		9CB24552211BF015003BF459 /* CAMBaseChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24551211BF015003BF459 /* CAMBaseChart.m */; };
 		9CB24555211BF04E003BF459 /* CAMLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24554211BF04E003BF459 /* CAMLineChart.m */; };
 		9CB24559211C34CE003BF459 /* CAMTextKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24558211C34CE003BF459 /* CAMTextKit.m */; };
+		9CB24560212134D1003BF459 /* CAMXYAxisProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB2455F212134D1003BF459 /* CAMXYAxisProfile.m */; };
+		9CB24563212135C4003BF459 /* CAMColorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24562212135C4003BF459 /* CAMColorKit.m */; };
+		9CB24566212189B3003BF459 /* CAMLineChartProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24565212189B3003BF459 /* CAMLineChartProfile.m */; };
 		9CDB12AD2119F7AB00F5C733 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12AC2119F7AB00F5C733 /* AppDelegate.m */; };
 		9CDB12B02119F7AB00F5C733 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB12AF2119F7AB00F5C733 /* ViewController.m */; };
 		9CDB12B32119F7AB00F5C733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDB12B12119F7AB00F5C733 /* Main.storyboard */; };
@@ -34,6 +37,12 @@
 		9CB24556211C0F4B003BF459 /* CAMMacroDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMMacroDefinition.h; sourceTree = "<group>"; };
 		9CB24557211C34CE003BF459 /* CAMTextKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMTextKit.h; sourceTree = "<group>"; };
 		9CB24558211C34CE003BF459 /* CAMTextKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMTextKit.m; sourceTree = "<group>"; };
+		9CB2455E212134D1003BF459 /* CAMXYAxisProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMXYAxisProfile.h; sourceTree = "<group>"; };
+		9CB2455F212134D1003BF459 /* CAMXYAxisProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMXYAxisProfile.m; sourceTree = "<group>"; };
+		9CB24561212135C4003BF459 /* CAMColorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMColorKit.h; sourceTree = "<group>"; };
+		9CB24562212135C4003BF459 /* CAMColorKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMColorKit.m; sourceTree = "<group>"; };
+		9CB24564212189B3003BF459 /* CAMLineChartProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMLineChartProfile.h; sourceTree = "<group>"; };
+		9CB24565212189B3003BF459 /* CAMLineChartProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMLineChartProfile.m; sourceTree = "<group>"; };
 		9CDB12A82119F7AB00F5C733 /* CAMChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAMChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDB12AB2119F7AB00F5C733 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CDB12AC2119F7AB00F5C733 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,15 +79,13 @@
 		9CB2454E211BEFD4003BF459 /* Kits */ = {
 			isa = PBXGroup;
 			children = (
-				9CDB12D3211AF0E700F5C733 /* CAMChartProfile.h */,
-				9CDB12D4211AF0E700F5C733 /* CAMChartProfile.m */,
-				9CDB12D6211AF77A00F5C733 /* CAMChartProfileManager.h */,
-				9CDB12D7211AF77A00F5C733 /* CAMChartProfileManager.m */,
 				9CB2454B211BD58A003BF459 /* CAMCoordinateAxisKit.h */,
 				9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */,
 				9CB24556211C0F4B003BF459 /* CAMMacroDefinition.h */,
 				9CB24557211C34CE003BF459 /* CAMTextKit.h */,
 				9CB24558211C34CE003BF459 /* CAMTextKit.m */,
+				9CB24561212135C4003BF459 /* CAMColorKit.h */,
+				9CB24562212135C4003BF459 /* CAMColorKit.m */,
 			);
 			name = Kits;
 			sourceTree = "<group>";
@@ -92,6 +99,21 @@
 				9CB24554211BF04E003BF459 /* CAMLineChart.m */,
 			);
 			name = Charts;
+			sourceTree = "<group>";
+		};
+		9CB2455D21213491003BF459 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9CDB12D3211AF0E700F5C733 /* CAMChartProfile.h */,
+				9CDB12D4211AF0E700F5C733 /* CAMChartProfile.m */,
+				9CDB12D6211AF77A00F5C733 /* CAMChartProfileManager.h */,
+				9CDB12D7211AF77A00F5C733 /* CAMChartProfileManager.m */,
+				9CB2455E212134D1003BF459 /* CAMXYAxisProfile.h */,
+				9CB2455F212134D1003BF459 /* CAMXYAxisProfile.m */,
+				9CB24564212189B3003BF459 /* CAMLineChartProfile.h */,
+				9CB24565212189B3003BF459 /* CAMLineChartProfile.m */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		9CDB129F2119F7AB00F5C733 = {
@@ -152,6 +174,7 @@
 		9CDB12CF211AE41800F5C733 /* CAMChart */ = {
 			isa = PBXGroup;
 			children = (
+				9CB2455D21213491003BF459 /* Profile */,
 				9CB2454F211BEFF7003BF459 /* Charts */,
 				9CB2454E211BEFD4003BF459 /* Kits */,
 			);
@@ -228,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB24563212135C4003BF459 /* CAMColorKit.m in Sources */,
 				9CDB12D5211AF0E700F5C733 /* CAMChartProfile.m in Sources */,
 				9CDB12B02119F7AB00F5C733 /* ViewController.m in Sources */,
 				9CDB12CE211A029D00F5C733 /* BaseViewController.m in Sources */,
@@ -238,7 +262,9 @@
 				9CDB12BB2119F7AC00F5C733 /* main.m in Sources */,
 				9CDB12AD2119F7AB00F5C733 /* AppDelegate.m in Sources */,
 				9CB24559211C34CE003BF459 /* CAMTextKit.m in Sources */,
+				9CB24566212189B3003BF459 /* CAMLineChartProfile.m in Sources */,
 				9CB24555211BF04E003BF459 /* CAMLineChart.m in Sources */,
+				9CB24560212134D1003BF459 /* CAMXYAxisProfile.m in Sources */,
 				9CDB12D8211AF77A00F5C733 /* CAMChartProfileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

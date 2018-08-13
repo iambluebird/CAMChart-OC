@@ -47,6 +47,7 @@ static id _instance = nil;
     return _instance;
 }
 
+//利用私有化的initPrivate方法初始化实例，能够实现内部数据的初始化
 -(instancetype)initPrivate{
     self = [super init];
     if (self) {
@@ -55,6 +56,7 @@ static id _instance = nil;
     return self;
 }
 
+//默认的Init方法被转接到了单例接口上
 - (instancetype)init
 {
     return [[self class]shareInstance];
@@ -62,7 +64,7 @@ static id _instance = nil;
 
 
 
-
+#pragma mark - 各种主题配置文件定义
 
 - (CAMChartProfile *)defaultProfile{
     if(!_defaultProfile){
@@ -73,15 +75,55 @@ static id _instance = nil;
         _defaultProfile.backgroundColor = [UIColor whiteColor];
         _defaultProfile.themeColor = [UIColor blueColor];
         
-        _defaultProfile.axisLineWidth = 2.0f;
-        _defaultProfile.axisUnitFontSize = 11.0f;
+        _defaultProfile.animationDisplay = YES;
+        _defaultProfile.animationDuration = 1.0f;
+        
+        
+        
+        /* XY坐标轴默认样式 */
+        _defaultProfile.xyAxis = [[CAMXYAxisProfile alloc] initWithThemeColor:_defaultProfile.themeColor];
+        
+        _defaultProfile.xyAxis.showXAxis = YES;
+        _defaultProfile.xyAxis.showYAxis = YES;
+        _defaultProfile.xyAxis.axisLineWidth = 2.0f;
+        _defaultProfile.xyAxis.axisUnitFont = [UIFont systemFontOfSize:11.0f];
+        
+        _defaultProfile.xyAxis.showXLabel = YES;
+        _defaultProfile.xyAxis.showYLabel = YES;
+        _defaultProfile.xyAxis.xyLabelFont = [UIFont systemFontOfSize:11.0f];
+        _defaultProfile.xyAxis.yLabelFormat = @"%0.1f";
+        _defaultProfile.xyAxis.yLabelDefaultCount = 5;
+        
+        _defaultProfile.xyAxis.showXGrid = YES;
+        _defaultProfile.xyAxis.showYGrid = YES;
+        _defaultProfile.xyAxis.gridStepSize = 20.0f;
+        _defaultProfile.xyAxis.gridColor = [UIColor lightGrayColor];
+        
+        
+        /* Line Chart 默认样式 */
+        _defaultProfile.lineChart.lineStyle = CAMChartLineStyleStraight;
+        _defaultProfile.lineChart.showPoint = YES;
+        _defaultProfile.lineChart.showPointLabel = YES;
+        _defaultProfile.lineChart.pointLabelFontSize = 11;
+        _defaultProfile.lineChart.pointLabelFontColor = [UIColor blueColor];
+        
+        
+        
+        /* 配色方案 */
+        NSMutableArray *lineColors = [NSMutableArray new];
+//        [lineColors addObject:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.5]];
+        [lineColors addObject:[UIColor redColor]];
+//        [lineColors addObject:[UIColor greenColor]];
+        [lineColors addObject:[UIColor purpleColor]];
+        
+        _defaultProfile.chartColors = lineColors;
+        
     }
     return _defaultProfile;
 }
 
 
-
-#pragma mark - Custom Theme
+#pragma mark - Custom Theme 管理方法
 - (void)registerCustomProfile:(CAMChartProfile *)profile{
     [_customProfiles addObject:profile];
 }
@@ -95,7 +137,6 @@ static id _instance = nil;
     }
     return _customProfiles[index];
 }
-
 
 
 

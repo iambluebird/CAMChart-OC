@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "CAMMacroDefinition.h"
-#import "CAMChartProfile.h"
+#import "CAMXYAxisProfile.h"
 #import "CAMTextKit.h"
+
+
+
 
 @interface CAMCoordinateAxisKit : NSObject
 
 
--(void)drawXYCoordinateWithRect:(CGRect)rect ChartProfile:(CAMChartProfile*)profile xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels;
+-(void)drawXYCoordinateWithRect:(CGRect)rect ChartProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels;
 
 @end
