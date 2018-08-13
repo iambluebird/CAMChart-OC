@@ -76,31 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9CB2454E211BEFD4003BF459 /* Kits */ = {
-			isa = PBXGroup;
-			children = (
-				9CB2454B211BD58A003BF459 /* CAMCoordinateAxisKit.h */,
-				9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */,
-				9CB24556211C0F4B003BF459 /* CAMMacroDefinition.h */,
-				9CB24557211C34CE003BF459 /* CAMTextKit.h */,
-				9CB24558211C34CE003BF459 /* CAMTextKit.m */,
-				9CB24561212135C4003BF459 /* CAMColorKit.h */,
-				9CB24562212135C4003BF459 /* CAMColorKit.m */,
-			);
-			name = Kits;
-			sourceTree = "<group>";
-		};
-		9CB2454F211BEFF7003BF459 /* Charts */ = {
-			isa = PBXGroup;
-			children = (
-				9CB24550211BF015003BF459 /* CAMBaseChart.h */,
-				9CB24551211BF015003BF459 /* CAMBaseChart.m */,
-				9CB24553211BF04E003BF459 /* CAMLineChart.h */,
-				9CB24554211BF04E003BF459 /* CAMLineChart.m */,
-			);
-			name = Charts;
-			sourceTree = "<group>";
-		};
 		9CB2455D21213491003BF459 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +89,31 @@
 				9CB24565212189B3003BF459 /* CAMLineChartProfile.m */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		9CB245672121EF3A003BF459 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				9CB24550211BF015003BF459 /* CAMBaseChart.h */,
+				9CB24551211BF015003BF459 /* CAMBaseChart.m */,
+				9CB24553211BF04E003BF459 /* CAMLineChart.h */,
+				9CB24554211BF04E003BF459 /* CAMLineChart.m */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		9CB245682121EF4D003BF459 /* Kits */ = {
+			isa = PBXGroup;
+			children = (
+				9CB2454B211BD58A003BF459 /* CAMCoordinateAxisKit.h */,
+				9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */,
+				9CB24556211C0F4B003BF459 /* CAMMacroDefinition.h */,
+				9CB24557211C34CE003BF459 /* CAMTextKit.h */,
+				9CB24558211C34CE003BF459 /* CAMTextKit.m */,
+				9CB24561212135C4003BF459 /* CAMColorKit.h */,
+				9CB24562212135C4003BF459 /* CAMColorKit.m */,
+			);
+			path = Kits;
 			sourceTree = "<group>";
 		};
 		9CDB129F2119F7AB00F5C733 = {
@@ -174,9 +174,9 @@
 		9CDB12CF211AE41800F5C733 /* CAMChart */ = {
 			isa = PBXGroup;
 			children = (
+				9CB245672121EF3A003BF459 /* Charts */,
 				9CB2455D21213491003BF459 /* Profile */,
-				9CB2454F211BEFF7003BF459 /* Charts */,
-				9CB2454E211BEFD4003BF459 /* Kits */,
+				9CB245682121EF4D003BF459 /* Kits */,
 			);
 			path = CAMChart;
 			sourceTree = "<group>";

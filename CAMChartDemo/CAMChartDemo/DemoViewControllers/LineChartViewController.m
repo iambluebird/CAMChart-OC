@@ -31,11 +31,11 @@
     CAMChartProfile *profile = [pm customProfileForIndex:0];
 //    profile.margin = 20;
 //    profile.backgroundColor = [UIColor whiteColor];
-//    profile.axisLineWidth = 1;
-//    profile.axisUnitFont = [UIFont systemFontOfSize:15];
-//    profile.xyAxis.axisUnitColor = [UIColor redColor];
-//    profile.axisLineColor = [UIColor grayColor];
-//    profile.axisLineWidth = 4;
+//    profile.lineWidth = 1;
+//    profile.unitFont = [UIFont systemFontOfSize:15];
+//    profile.xyAxis.unitColor = [UIColor redColor];
+//    profile.lineColor = [UIColor grayColor];
+//    profile.lineWidth = 4;
 //    profile.showYAxis = false;
     
 //    profile.lineChart.lineWidth = 3;
@@ -46,7 +46,7 @@
 //    profile.lineChart.showPoint = YES;
     
 //    profile.xyAxis.gridStepSize = 30;
-    profile.xyAxis.showXGrid = NO;
+//    profile.xyAxis.showXGrid = NO;
     profile.xyAxis.gridStyle = CAMXYAxisGridStyleDependOnPositions;
 
 //    profile.animationDisplay = NO;
@@ -62,30 +62,26 @@
     [_lineChart setFrame:CGRectMake(0, 100, self.view.bounds.size.width, 200)];
 //    _lineChart = [[CAMLineChart alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, 200)];
     _lineChart.chartProfile = profile;
-    _lineChart.xUnit = @"直角坐标系中，正三角形的";
-    _lineChart.yUnit = @"直角坐";
+    _lineChart.xUnit = @"X轴";
+    _lineChart.yUnit = @"Y轴";
 //    _lineChart.xLabels = @[@"STEP 1", @"STEP 2", @"STEP 3", @"STEP 4", @"STEP 5", @"STEP 6", @"STEP 7"];
     _lineChart.xLabels = @[@"中国", @"美利坚合众国", @"英格兰", @"巴西", @"法国"];
 //    _lineChart.yLabels = @[@"中国", @"美利坚合众国", @"英格兰", @"巴西", @"法国"];
     
+    profile.xyAxis.yLabelDefaultCount = 6;
+    profile.lineChart.pointLabelFormat = @"%0.1f";
     
+//    _lineChart.minValue = -33.2;
+//    _lineChart.maxValue = 250.3;
    
-    NSArray *data01 = @[@3, @5, @9, @2, @69, @33, @45];
-    NSArray *data02 = @[@13, @57, @69, @26, @117];
-//    NSArray *data01 = @[@1.2, @1.5, @1.3, @1.45, @1.27];
+    NSArray *data01 = @[@3, @5, @0, @0, @69, @33, @45];
+    NSArray *data02 = @[@73.2, @57, @69, @26, @117];
     
     [_lineChart addChartData:data01];
     [_lineChart addChartData:data02];
     [_lineChart drawChart];
     [self.view addSubview:_lineChart];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(100, 400, 200, 40);
-    btn.backgroundColor = [UIColor purpleColor];
-    [btn setTitle:@"click" forState:UIControlStateNormal];
-    btn.titleLabel.textColor = [UIColor whiteColor];
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,11 +105,6 @@
 
 
 
--(void)btnClick:(id)sender{
-    _lineChart.xUnit = @"Hello,world!";
-    _lineChart.yUnit = @"Welcome";
-    
-    [_lineChart setNeedsDisplay];
-}
+
 
 @end

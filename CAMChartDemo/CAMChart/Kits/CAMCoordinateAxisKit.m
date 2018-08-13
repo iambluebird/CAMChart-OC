@@ -28,8 +28,8 @@
     //开始绘制坐标轴线条
     CGContextSaveGState(context);   // 开启新场景 A ，绘制标签、坐标点等元素
     
-    CGFloat axisSeparatorLineWidth = profile.axisLineWidth / 2;
-    UIColor *axisSpearatorColor = profile.axisLineColor;
+    CGFloat axisSeparatorLineWidth = profile.lineWidth / 2;
+    UIColor *axisSpearatorColor = profile.lineColor;
     CGContextSetLineWidth(context, axisSeparatorLineWidth);
     CGContextSetStrokeColorWithColor(context, [axisSpearatorColor CGColor]);
     
@@ -71,7 +71,6 @@
         }
         
         CGFloat yPoint = yStart;
-        [yPositions addObject:[NSNumber numberWithFloat:yPoint]];
         for (NSInteger i = 0; i < yLabels.count; i++) {
             //label text
             if(profile.showYLabel){
@@ -84,12 +83,12 @@
             //separator
             if(profile.showYAxis){
                 CGContextMoveToPoint(context, canvasMargin + yLabelHoldWidth, yPoint - axisSeparatorLineWidth / 2);
-                CGContextAddLineToPoint(context, canvasMargin + yLabelHoldWidth + profile.axisLineWidth * 3 / 2, yPoint - axisSeparatorLineWidth / 2);
+                CGContextAddLineToPoint(context, canvasMargin + yLabelHoldWidth + profile.lineWidth * 3 / 2, yPoint - axisSeparatorLineWidth / 2);
                 CGContextStrokePath(context);
             }
-            
-            yPoint -= yStep;
             [yPositions addObject:[NSNumber numberWithFloat:yPoint]];
+            yPoint -= yStep;
+            
         }
     }
     
@@ -105,7 +104,6 @@
         }
         
         CGFloat xPoint = xStart;
-        [xPositions addObject:[NSNumber numberWithFloat:xPoint]];
         for (NSInteger i = 0; i < xLabels.count; i++) {
             //label text
             if(profile.showXLabel){
@@ -119,11 +117,11 @@
             //separator
             if(profile.showXAxis){
                 CGContextMoveToPoint(context, xPoint - axisSeparatorLineWidth / 2, rectHeight - canvasMargin);
-                CGContextAddLineToPoint(context, xPoint - axisSeparatorLineWidth / 2, rectHeight - canvasMargin - profile.axisLineWidth * 3 / 2);
+                CGContextAddLineToPoint(context, xPoint - axisSeparatorLineWidth / 2, rectHeight - canvasMargin - profile.lineWidth * 3 / 2);
                 CGContextStrokePath(context);
             }
-            xPoint += xStep;
             [xPositions addObject:[NSNumber numberWithFloat:xPoint]];
+            xPoint += xStep;
         }
     }
     
@@ -133,8 +131,8 @@
     //开始绘制坐标轴线条
     CGContextSaveGState(context);   //开启场景 B ，绘制坐标轴线条
     
-    CGFloat axisLineWidth = profile.axisLineWidth;
-    UIColor *axisColor = profile.axisLineColor;
+    CGFloat axisLineWidth = profile.lineWidth;
+    UIColor *axisColor = profile.lineColor;
     
     CGContextSetLineWidth(context, axisLineWidth);
     CGContextSetStrokeColorWithColor(context, [axisColor CGColor]);
@@ -147,9 +145,6 @@
     CGFloat yMin = canvasMargin;
     CGFloat xMax = canvasMargin + xAxisWidth + yLabelHoldWidth;
     CGFloat yMax = canvasMargin + yAxisHeight;
-    
-    //三点确定坐标系
-    
     
     if(profile.showYAxis){
         CGContextMoveToPoint(context, xMin, yMin);
@@ -191,7 +186,7 @@
     //绘制GridLines
     CGContextSaveGState(context);       //开始场景 C ，绘制GridLine
     
-    CGFloat gridLineWidth = profile.axisLineWidth / 2;
+    CGFloat gridLineWidth = profile.lineWidth / 2;
     CGFloat dash[] = {5, 5};
     
     CGContextSetLineWidth(context, gridLineWidth);
@@ -261,21 +256,18 @@
     
     // 绘制坐标单位
     CGFloat unitMaxWidth = xAxisWidth / 3.0;    //单位标签的宽度限定在整个图表的 1/3 范围内
-    UIColor *unitColor = profile.axisUnitColor;
+    UIColor *unitColor = profile.unitColor;
     if(profile.showXAxis && [xUnit length]){
-        CGSize size = [CAMTextKit sizeOfString:xUnit Font:profile.axisUnitFont Width:unitMaxWidth];
+        CGSize size = [CAMTextKit sizeOfString:xUnit Font:profile.unitFont Width:unitMaxWidth];
         CGRect textRect = CGRectMake(xMax - size.width, yMax - size.height - 5, size.width, size.height);
-        [CAMTextKit drawText:xUnit InRect:textRect Font:profile.axisUnitFont Color:unitColor];
+        [CAMTextKit drawText:xUnit InRect:textRect Font:profile.unitFont Color:unitColor];
     }
     
     if(profile.showYAxis && [yUnit length]){
-        CGSize size = [CAMTextKit sizeOfString:xUnit Font:profile.axisUnitFont Width:unitMaxWidth];
+        CGSize size = [CAMTextKit sizeOfString:xUnit Font:profile.unitFont Width:unitMaxWidth];
         CGRect textRect = CGRectMake(xMin + 5, yMin, size.width, size.height);
-        [CAMTextKit drawText:yUnit InRect:textRect Font:profile.axisUnitFont Color:unitColor];
+        [CAMTextKit drawText:yUnit InRect:textRect Font:profile.unitFont Color:unitColor];
     }
-    
-    
-    
     
     CGContextRestoreGState(context);    //恢复到初始场景
     

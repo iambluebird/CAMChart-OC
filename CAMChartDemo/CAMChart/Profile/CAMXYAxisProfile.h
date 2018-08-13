@@ -25,12 +25,12 @@ typedef NS_ENUM(NSUInteger, CAMXYAxisGridStyle) {
 //坐标轴设置
 @property(nonatomic, assign) BOOL showXAxis;                //是否显示X坐标
 @property(nonatomic, assign) BOOL showYAxis;                //是否显示Y坐标
-@property(nonatomic, assign) CGFloat axisLineWidth;         //坐标轴线条宽度
-@property(nonatomic, strong) UIColor* axisLineColor;        //坐标轴颜色
+@property(nonatomic, assign) CGFloat lineWidth;             //坐标轴线条宽度
+@property(nonatomic, strong) UIColor* lineColor;            //坐标轴颜色
 
 //坐标轴单位标签设置：如果传入空，则不显示单位标签。默认为空
-@property(nonatomic, strong) UIFont* axisUnitFont;          //坐标轴上单位标签的字体
-@property(nonatomic, strong) UIColor* axisUnitColor;        //坐标轴上单位标签的颜色
+@property(nonatomic, strong) UIFont* unitFont;              //坐标轴上单位标签的字体
+@property(nonatomic, strong) UIColor* unitColor;            //坐标轴上单位标签的颜色
 
 //轴标签设置
 @property(nonatomic, assign) BOOL showXLabel;               //是否显示X轴上标签

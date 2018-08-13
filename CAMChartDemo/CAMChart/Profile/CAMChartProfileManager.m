@@ -85,8 +85,8 @@ static id _instance = nil;
         
         _defaultProfile.xyAxis.showXAxis = YES;
         _defaultProfile.xyAxis.showYAxis = YES;
-        _defaultProfile.xyAxis.axisLineWidth = 2.0f;
-        _defaultProfile.xyAxis.axisUnitFont = [UIFont systemFontOfSize:11.0f];
+        _defaultProfile.xyAxis.lineWidth = 2.0f;
+        _defaultProfile.xyAxis.unitFont = [UIFont systemFontOfSize:11.0f];
         
         _defaultProfile.xyAxis.showXLabel = YES;
         _defaultProfile.xyAxis.showYLabel = YES;
@@ -111,10 +111,9 @@ static id _instance = nil;
         
         /* 配色方案 */
         NSMutableArray *lineColors = [NSMutableArray new];
-//        [lineColors addObject:[UIColor colorWithRed:1 green:0 blue:0 alpha:0.5]];
         [lineColors addObject:[UIColor redColor]];
-//        [lineColors addObject:[UIColor greenColor]];
         [lineColors addObject:[UIColor purpleColor]];
+        [lineColors addObject:[UIColor greenColor]];
         
         _defaultProfile.chartColors = lineColors;
         

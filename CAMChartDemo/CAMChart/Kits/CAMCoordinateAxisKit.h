@@ -17,6 +17,17 @@
 @interface CAMCoordinateAxisKit : NSObject
 
 
+/**
+ 绘制XY坐标系
+
+ @param rect 视图区域
+ @param profile 配置信息
+ @param canvasMargin 图表可视区域边距
+ @param xUnit X坐标单位标签内容
+ @param yUnit Y坐标单位标签内容
+ @param xLabels X坐标标签
+ @param yLabels Y坐标标签
+ */
 -(void)drawXYCoordinateWithRect:(CGRect)rect ChartProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels;
 
 @end

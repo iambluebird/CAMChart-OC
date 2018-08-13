@@ -31,10 +31,10 @@
     
     newProfile.showXAxis = self.showXAxis;
     newProfile.showYAxis = self.showYAxis;
-    newProfile.axisLineWidth = self.axisLineWidth;
-    newProfile.axisLineColor = self.axisLineColor;
-    newProfile.axisUnitFont = self.axisUnitFont;
-    newProfile.axisUnitColor = self.axisUnitColor;
+    newProfile.lineWidth = self.lineWidth;
+    newProfile.lineColor = self.lineColor;
+    newProfile.unitFont = self.unitFont;
+    newProfile.unitColor = self.unitColor;
     
     newProfile.showXLabel = self.showXLabel;
     newProfile.showYLabel = self.showYLabel;
@@ -62,25 +62,25 @@
 
 
 #pragma mark - 根据主题配置自动计算的一些默认属性
-- (UIColor *)axisLineColor{
-    if(!_axisLineColor){
-        _axisLineColor = [CAMColorKit deepenWithColor:self.themeColor];
+- (UIColor *)lineColor{
+    if(!_lineColor){
+        _lineColor = [CAMColorKit deepenWithColor:self.themeColor];
     }
-    return _axisLineColor;
+    return _lineColor;
 }
 
-- (UIFont *)axisUnitFont{
-    if(!_axisUnitFont){
-        _axisUnitFont = [UIFont systemFontOfSize:11.0f];
+- (UIFont *)unitFont{
+    if(!_unitFont){
+        _unitFont = [UIFont systemFontOfSize:11.0f];
     }
-    return _axisUnitFont;
+    return _unitFont;
 }
 
-- (UIColor *)axisUnitColor{
-    if(!_axisUnitColor){
-        _axisUnitColor = self.axisLineColor;
+- (UIColor *)unitColor{
+    if(!_unitColor){
+        _unitColor = self.lineColor;
     }
-    return _axisUnitColor;
+    return _unitColor;
 }
 
 - (UIFont *)xyLabelFont{
@@ -92,7 +92,7 @@
 
 -(UIColor *)xyLabelColor{
     if(!_xyLabelColor){
-        _xyLabelColor = self.axisLineColor;
+        _xyLabelColor = self.lineColor;
     }
     return _xyLabelColor;
 }
