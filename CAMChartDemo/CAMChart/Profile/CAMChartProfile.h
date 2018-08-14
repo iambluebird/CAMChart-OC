@@ -15,54 +15,33 @@
 
 @interface CAMChartProfile : NSObject<NSMutableCopying>
 
-
 /**
- Chart 视图边距 默认为20
+ 坐标定义
  */
-@property(nonatomic, assign) CGFloat margin;
-
-/**
- Chart 视图内边距 默认10
- */
-@property(nonatomic, assign) CGFloat padding;
+@property(nonatomic, assign) CGFloat margin;                //Chart 视图边距 默认为20
+@property(nonatomic, assign) CGFloat padding;               //Chart 视图内边距 默认10
 
 
 /**
  主题色：如果统计图的各个色值没有定义，则会根据这个主题色进行推算。
  单独定义了的颜色属性，不再受主题色控制。
  */
-@property(nonatomic, strong) UIColor* themeColor;
+@property(nonatomic, strong) UIColor* themeColor;           //主题色
+@property(nonatomic, strong) UIColor* backgroundColor;      //视图背景色，默认为 whiteColor
+@property(nonatomic, strong) NSArray* chartColors;          //统计图配色表，不同的数据组使用不同配色
 
 /**
- 视图背景色，默认为 whiteColor
+ 子项配置
  */
-@property(nonatomic, strong) UIColor* backgroundColor;
-
-/**
- 统计图配色表，不同的数据组使用不同配色
- */
-@property(nonatomic, strong) NSArray* chartColors;
-
-/**
- XY坐标配置信息
- */
-@property(nonatomic, strong) CAMXYAxisProfile *xyAxis;
-
-/**
- 折线图配置信息
- */
-@property(nonatomic, strong) CAMLineChartProfile *lineChart;
+@property(nonatomic, strong) CAMXYAxisProfile *xyAxis;      //XY坐标配置信息
+@property(nonatomic, strong) CAMLineChartProfile *lineChart;//折线图配置信息
 
 
 /**
- 是否开启动画显示
+ 动画配置
  */
-@property(nonatomic, assign) BOOL animationDisplay;
-
-/**
- 动画时长，默认为1s
- */
-@property(nonatomic, assign) CGFloat animationDuration;
+@property(nonatomic, assign) BOOL animationDisplay;         //是否开启动画
+@property(nonatomic, assign) CGFloat animationDuration;     //动画时长，默认为1s
 
 
 

@@ -47,7 +47,7 @@ typedef NS_ENUM(NSUInteger, CAMXYAxisGridStyle) {
 @property(nonatomic, assign) BOOL showYGrid;                //是否显示Y表格线（水平）
 @property(nonatomic, assign) CAMXYAxisGridStyle gridStyle;  //表格线依托方式：步进式 or 节点式
 @property(nonatomic, assign) CGFloat gridStepSize;          //步进尺寸，当gridStyle为步进式时生效
-@property(nonatomic, assign) UIColor* gridColor;            //表格线颜色
+@property(nonatomic, strong) UIColor* gridColor;            //表格线颜色
 
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "CAMChartProfileManager.h"
+#import "CAMColorKit.h"
 
 @interface CAMChartProfileManager(){
     NSMutableArray* _customProfiles;
@@ -87,34 +88,48 @@ static id _instance = nil;
         _defaultProfile.xyAxis.showXAxis = YES;
         _defaultProfile.xyAxis.showYAxis = YES;
         _defaultProfile.xyAxis.lineWidth = 2.0f;
+        _defaultProfile.xyAxis.lineColor = CAMHEXCOLOR(@"778899");
+        
         _defaultProfile.xyAxis.unitFont = [UIFont systemFontOfSize:11.0f];
+        _defaultProfile.xyAxis.unitColor = CAMHEXCOLOR(@"778899");
         
         _defaultProfile.xyAxis.showXLabel = YES;
         _defaultProfile.xyAxis.showYLabel = YES;
         _defaultProfile.xyAxis.xyLabelFont = [UIFont systemFontOfSize:11.0f];
+        _defaultProfile.xyAxis.xyLabelColor = CAMHEXCOLOR(@"778899");
         _defaultProfile.xyAxis.yLabelFormat = @"%0.1f";
         _defaultProfile.xyAxis.yLabelDefaultCount = 5;
         
         _defaultProfile.xyAxis.showXGrid = YES;
         _defaultProfile.xyAxis.showYGrid = YES;
+        _defaultProfile.xyAxis.gridStyle = CAMXYAxisGridStyleDependOnStep;
         _defaultProfile.xyAxis.gridStepSize = 20.0f;
-        _defaultProfile.xyAxis.gridColor = [UIColor lightGrayColor];
+        _defaultProfile.xyAxis.gridColor = CAMHEXCOLOR(@"dcdcdc");
         
         
         /* Line Chart 默认样式 */
         _defaultProfile.lineChart.lineStyle = CAMChartLineStyleStraight;
+        _defaultProfile.lineChart.lineWidth = 2;
+        
         _defaultProfile.lineChart.showPoint = YES;
         _defaultProfile.lineChart.showPointLabel = YES;
         _defaultProfile.lineChart.pointLabelFontSize = 11;
-        _defaultProfile.lineChart.pointLabelFontColor = [UIColor blueColor];
+        _defaultProfile.lineChart.pointLabelFontColor = CAMHEXCOLOR(@"4682b4");
         
         
         
         /* 配色方案 */
         NSMutableArray *lineColors = [NSMutableArray new];
-        [lineColors addObject:[UIColor redColor]];
-        [lineColors addObject:[UIColor purpleColor]];
-        [lineColors addObject:[UIColor greenColor]];
+        [lineColors addObject:CAMHEXCOLOR(@"20b2aa")];
+        [lineColors addObject:CAMHEXCOLOR(@"a52a2a")];
+        [lineColors addObject:CAMHEXCOLOR(@"6a5acd")];
+        [lineColors addObject:CAMHEXCOLOR(@"ff6347")];
+        [lineColors addObject:CAMHEXCOLOR(@"2f4f4f")];
+        [lineColors addObject:CAMHEXCOLOR(@"6b8e23")];
+        [lineColors addObject:CAMHEXCOLOR(@"c71585")];
+        [lineColors addObject:CAMHEXCOLOR(@"b8860b")];
+        [lineColors addObject:CAMHEXCOLOR(@"00bfff")];
+        [lineColors addObject:CAMHEXCOLOR(@"4682b4")];
         
         _defaultProfile.chartColors = lineColors;
         

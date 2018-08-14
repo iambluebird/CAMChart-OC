@@ -66,20 +66,41 @@
     _lineChart.xUnit = @"X轴";
     _lineChart.yUnit = @"Y轴";
 //    _lineChart.xLabels = @[@"STEP 1", @"STEP 2", @"STEP 3", @"STEP 4", @"STEP 5", @"STEP 6", @"STEP 7"];
-    _lineChart.xLabels = @[@"中国", @"美利坚合众国", @"英格兰", @"巴西", @"法国"];
+//    _lineChart.xLabels = @[@"中国", @"美利坚合众国", @"英格兰", @"巴西", @"法国"];
 //    _lineChart.yLabels = @[@"中国", @"美利坚合众国", @"英格兰", @"巴西", @"法国"];
     
-    profile.xyAxis.yLabelDefaultCount = 6;
+    profile.xyAxis.yLabelDefaultCount = 10;
     profile.lineChart.pointLabelFormat = @"%0.1f";
+    profile.lineChart.showPointLabel = NO;
     
 //    _lineChart.minValue = -33.2;
 //    _lineChart.maxValue = 250.3;
    
-    NSArray *data01 = @[@3, @5, @0, @0, @69, @33, @45];
-    NSArray *data02 = @[@73.2, @57, @69, @26, @117];
+//    NSArray *data01 = @[@3, @5, @0, @0, @69, @33, @45];
+//    NSArray *data02 = @[@73.2, @57, @69, @26, @117];
     
+    NSArray *data00 = @[@10, @10];
+    NSArray *data01 = @[@20, @20];
+    NSArray *data02 = @[@30, @30];
+    NSArray *data03 = @[@40, @40];
+    NSArray *data04 = @[@50, @50];
+    NSArray *data05 = @[@60, @60];
+    NSArray *data06 = @[@70, @70];
+    NSArray *data07 = @[@80, @80];
+    NSArray *data08 = @[@90, @90];
+    NSArray *data09 = @[@100, @100];
+    
+    [_lineChart addChartData:data00];
     [_lineChart addChartData:data01];
     [_lineChart addChartData:data02];
+    [_lineChart addChartData:data03];
+    [_lineChart addChartData:data04];
+    [_lineChart addChartData:data05];
+    [_lineChart addChartData:data06];
+    [_lineChart addChartData:data07];
+    [_lineChart addChartData:data08];
+    [_lineChart addChartData:data09];
+    
     [_lineChart drawChart];
     [self.view addSubview:_lineChart];
     

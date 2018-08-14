@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define CAMHEXCOLOR(hexStr) [CAMColorKit colorWithHex:hexStr]
+
 @interface CAMColorKit : NSObject
 
 
@@ -27,5 +29,7 @@
  @return new color
  */
 +(UIColor*)weakenWithColor:(UIColor*)color;
+
++(UIColor*)colorWithHex:(NSString*)hexString;
 
 @end
