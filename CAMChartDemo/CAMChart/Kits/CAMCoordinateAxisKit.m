@@ -57,7 +57,7 @@
             }
             //以最大的Y轴标签宽度作为占位基准宽度
             maxValue = [[yLabelWidths valueForKeyPath:@"@max.floatValue"] floatValue];
-            yLabelHoldWidth = maxValue + CAM_XYCOORDINATE_YLABEL_SAVE_OFFSET; //计算出Y轴标签占位宽度，与Y轴之间留出安全距离
+            yLabelHoldWidth = maxValue + CAM_XYCOORDINATE_LABEL_SAVE_OFFSET; //计算出Y轴标签占位宽度，与Y轴之间留出安全距离
         }
         
         //计算出Y轴上节点位置
@@ -110,7 +110,7 @@
                 NSString *text = xLabels[i];
                 CGSize size = [CAMTextKit sizeOfString:text Font:profile.xyLabelFont Width:xLabelMaxWidth];   // -6是为了避免X标签太长，两个相邻的紧贴在一起
                 CGFloat xOffset = size.width / 2;
-                CGRect textRect = CGRectMake(xPoint - xOffset, rectHeight - canvasMargin + CAM_XYCOORDINATE_YLABEL_SAVE_OFFSET, size.width, size.height);
+                CGRect textRect = CGRectMake(xPoint - xOffset, rectHeight - canvasMargin + CAM_XYCOORDINATE_LABEL_SAVE_OFFSET, size.width, size.height);
                 [CAMTextKit drawText:xLabels[i] InRect:textRect Font:profile.xyLabelFont Color:labelColor];
             }
             

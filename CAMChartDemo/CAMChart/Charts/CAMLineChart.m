@@ -198,7 +198,7 @@
             }
             //以最大的Y轴标签宽度作为占位基准宽度
             CGFloat maxValue = [[yLabelWidths valueForKeyPath:@"@max.floatValue"] floatValue];
-            _yLabelHoldWidth = maxValue + CAM_XYCOORDINATE_YLABEL_SAVE_OFFSET; //计算出Y轴标签占位宽度，与Y轴之间留出安全距离
+            _yLabelHoldWidth = maxValue + CAM_XYCOORDINATE_LABEL_SAVE_OFFSET; //计算出Y轴标签占位宽度，与Y轴之间留出安全距离
         }
     }
     

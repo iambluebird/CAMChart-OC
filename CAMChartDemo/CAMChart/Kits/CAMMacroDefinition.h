@@ -17,7 +17,7 @@
 
 //XY坐标系中，有效绘制区域距离坐标轴的安全距离，避免贴死坐标轴出现元素重叠的情况
 //#define CAM_XYCOORDINATE_SAFE_OFFSET 10.0 //修改为profile里的padding属性进行控制
-//XY坐标系中，Y轴标签与Y轴之间保留的安全距离，避免重叠
-#define CAM_XYCOORDINATE_YLABEL_SAVE_OFFSET 5.0
+//XY坐标系中，轴标签与轴之间保留的安全距离，避免重叠
+#define CAM_XYCOORDINATE_LABEL_SAVE_OFFSET 5.0
 
 #endif /* CAMMacroDefinition_h */
