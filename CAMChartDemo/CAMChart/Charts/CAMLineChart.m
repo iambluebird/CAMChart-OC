@@ -37,6 +37,11 @@
 
 
 - (void)drawChart{
+    [super drawChart];
+}
+
+- (void)drawChartWithAnimationDisplay:(BOOL)animationDisplay{
+    [super drawChartWithAnimationDisplay:animationDisplay];
     if(self.frame.size.width == 0 || self.frame.size.height == 0){
         @throw [NSException exceptionWithName:@"frame未指定" reason:@"请在调用 drawChart 函数之前设置图表的Frame." userInfo:nil];
     }
@@ -49,8 +54,6 @@
     [self mapChartDataToCanvas];
     [self drawChartLines];
 }
-
-
 
 
 
@@ -341,9 +344,9 @@
         
         
         CALayer *pointLayer = [self pointLayerWithChartLineIndex:i];
-        [_pointLayers addObject:pointLayer];
+        if(pointLayer) [_pointLayers addObject:pointLayer];
         
-        if(self.chartProfile.animationDisplay){
+        if(self.chartProfile.animationDisplay && _animationDispayThisTime){
             [CATransaction begin];
             
             [chartLineLayer addAnimation:[self animationForChartLine] forKey:@"strokeEndAnimation"];
@@ -356,7 +359,7 @@
     NSArray* pointLabelLayers = [self makePointLabels];
     [_pointLabelLayers addObjectsFromArray:pointLabelLayers];
     
-    if(self.chartProfile.animationDisplay){
+    if(self.chartProfile.animationDisplay && _animationDispayThisTime){
         for (CALayer *layer in pointLabelLayers) {
             [layer addAnimation:[self animationForChartPoint] forKey:nil];
         }

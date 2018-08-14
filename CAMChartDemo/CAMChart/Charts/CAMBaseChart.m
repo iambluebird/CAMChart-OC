@@ -67,7 +67,13 @@
 
 
 - (void)drawChart{
-    [self doesNotRecognizeSelector:_cmd];
+//    [self doesNotRecognizeSelector:_cmd];
+    [self drawChartWithAnimationDisplay:YES];
+}
+
+- (void)drawChartWithAnimationDisplay:(BOOL)animationDisplay{
+//    [self doesNotRecognizeSelector:_cmd];
+    _animationDispayThisTime = animationDisplay;
 }
 
 @end

@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C4F4457212299D4006B45A9 /* CAMChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMChart.h; sourceTree = "<group>"; };
 		9CB2454B211BD58A003BF459 /* CAMCoordinateAxisKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCoordinateAxisKit.h; sourceTree = "<group>"; };
 		9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCoordinateAxisKit.m; sourceTree = "<group>"; };
 		9CB24550211BF015003BF459 /* CAMBaseChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMBaseChart.h; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 				9CB245672121EF3A003BF459 /* Charts */,
 				9CB2455D21213491003BF459 /* Profile */,
 				9CB245682121EF4D003BF459 /* Kits */,
+				9C4F4457212299D4006B45A9 /* CAMChart.h */,
 			);
 			path = CAMChart;
 			sourceTree = "<group>";
