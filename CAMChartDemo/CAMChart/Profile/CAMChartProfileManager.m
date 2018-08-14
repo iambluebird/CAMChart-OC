@@ -71,6 +71,7 @@ static id _instance = nil;
         _defaultProfile = [[CAMChartProfile alloc] init];
         
         _defaultProfile.margin = 20.0f;
+        _defaultProfile.padding = 10.0f;
         
         _defaultProfile.backgroundColor = [UIColor whiteColor];
         _defaultProfile.themeColor = [UIColor blueColor];

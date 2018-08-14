@@ -29,6 +29,7 @@
     [pm registerCustomProfile:[pm.defaultProfile mutableCopy]];
     
     CAMChartProfile *profile = [pm customProfileForIndex:0];
+//    profile.padding = 20;
 //    profile.margin = 20;
 //    profile.backgroundColor = [UIColor whiteColor];
 //    profile.lineWidth = 1;

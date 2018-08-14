@@ -21,6 +21,11 @@
  */
 @property(nonatomic, assign) CGFloat margin;
 
+/**
+ Chart 视图内边距 默认10
+ */
+@property(nonatomic, assign) CGFloat padding;
+
 
 /**
  主题色：如果统计图的各个色值没有定义，则会根据这个主题色进行推算。

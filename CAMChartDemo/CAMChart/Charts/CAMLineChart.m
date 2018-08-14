@@ -92,7 +92,7 @@
 //坐标系的绘制实在 drawRect 重载方法里完成的
 - (void)drawRect:(CGRect)rect{
     CAMCoordinateAxisKit *axisKit = [[CAMCoordinateAxisKit alloc] init];
-    [axisKit drawXYCoordinateWithRect:rect ChartProfile:self.chartProfile.xyAxis CanvasMargin: self.chartProfile.margin xUnit:self.xUnit yUnit:self.yUnit xLabels:self.xLabels yLabels:self.yLabels];
+    [axisKit drawXYCoordinateWithRect:rect ChartProfile:self.chartProfile.xyAxis CanvasMargin: self.chartProfile.margin CanvasPadding: self.chartProfile.padding xUnit:self.xUnit yUnit:self.yUnit xLabels:self.xLabels yLabels:self.yLabels];
     [super drawRect:rect];
 }
 
@@ -202,10 +202,10 @@
         }
     }
     
-    CGFloat canvasWidth = rectWidth - self.chartProfile.margin * 2 - _yLabelHoldWidth - CAM_XYCOORDINATE_SAFE_OFFSET * 2;
-    CGFloat canvasHeight = rectHeight - self.chartProfile.margin * 2 - CAM_XYCOORDINATE_SAFE_OFFSET * 2;
-    CGFloat canvasXMin = self.chartProfile.margin + _yLabelHoldWidth + CAM_XYCOORDINATE_SAFE_OFFSET;
-    CGFloat canvasYMin = self.chartProfile.margin + CAM_XYCOORDINATE_SAFE_OFFSET;
+    CGFloat canvasWidth = rectWidth - self.chartProfile.margin * 2 - _yLabelHoldWidth - self.chartProfile.padding * 2;
+    CGFloat canvasHeight = rectHeight - self.chartProfile.margin * 2 - self.chartProfile.padding * 2;
+    CGFloat canvasXMin = self.chartProfile.margin + _yLabelHoldWidth + self.chartProfile.padding;
+    CGFloat canvasYMin = self.chartProfile.margin + self.chartProfile.padding;
     //得到了图表绘制的rect，与坐标系中的Grid部分重叠
     _chartRect = CGRectMake(canvasXMin, canvasYMin, canvasWidth, canvasHeight);
     
@@ -221,12 +221,12 @@
     //计算出x坐标数据节点
     _xPositions = [NSMutableArray new];
     if([self.xLabels count]){
-        CGFloat xStart = self.chartProfile.margin + _yLabelHoldWidth + CAM_XYCOORDINATE_SAFE_OFFSET;
+        CGFloat xStart = self.chartProfile.margin + _yLabelHoldWidth + self.chartProfile.padding;
         CGFloat xStep = 0;
         
         if(self.xLabels.count == 1){
             //如果X轴上只有一个数据标签，那么这个数据点呈现在视图中间
-            xStart = self.chartProfile.margin + _yLabelHoldWidth + CAM_XYCOORDINATE_SAFE_OFFSET + _chartRect.size.width / 2;
+            xStart = self.chartProfile.margin + _yLabelHoldWidth + self.chartProfile.padding + _chartRect.size.width / 2;
         }else{
             //如果X轴上超出一个数据标签，从xMin开始，步进一直到xMax，xStep就是步进值
             xStep = _chartRect.size.width / (self.xLabels.count - 1);

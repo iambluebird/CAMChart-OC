@@ -10,7 +10,7 @@
 
 @implementation CAMCoordinateAxisKit
 
--(void)drawXYCoordinateWithRect:(CGRect)rect ChartProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels{
+-(void)drawXYCoordinateWithRect:(CGRect)rect ChartProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin CanvasPadding:(CGFloat)canvasPadding xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels{
     
     CGFloat rectWidth = CGRectGetWidth(rect);
     CGFloat rectHeight = CGRectGetHeight(rect);
@@ -61,13 +61,13 @@
         }
         
         //计算出Y轴上节点位置
-        CGFloat yStart = rectHeight - canvasMargin - CAM_XYCOORDINATE_SAFE_OFFSET;
+        CGFloat yStart = rectHeight - canvasMargin - canvasPadding;
         CGFloat yStep = 0;
         
         if(yLabels.count == 1){
-            yStart = canvasMargin + CAM_XYCOORDINATE_SAFE_OFFSET + (rectHeight - canvasMargin * 2 - CAM_XYCOORDINATE_SAFE_OFFSET * 2) / 2;
+            yStart = canvasMargin + canvasPadding + (rectHeight - canvasMargin * 2 - canvasPadding * 2) / 2;
         }else{
-            yStep = (rectHeight - canvasMargin * 2 - CAM_XYCOORDINATE_SAFE_OFFSET * 2) / (yLabels.count - 1);
+            yStep = (rectHeight - canvasMargin * 2 - canvasPadding * 2) / (yLabels.count - 1);
         }
         
         CGFloat yPoint = yStart;
@@ -93,14 +93,14 @@
     }
     
     if([xLabels count]){
-        CGFloat xLabelMaxWidth = (rectWidth - canvasMargin * 2 - CAM_XYCOORDINATE_SAFE_OFFSET * 2 - yLabelHoldWidth) / xLabels.count;
-        CGFloat xStart = canvasMargin + yLabelHoldWidth + CAM_XYCOORDINATE_SAFE_OFFSET;
+        CGFloat xLabelMaxWidth = (rectWidth - canvasMargin * 2 - canvasPadding * 2 - yLabelHoldWidth) / xLabels.count;
+        CGFloat xStart = canvasMargin + yLabelHoldWidth + canvasPadding;
         CGFloat xStep = 0;
         
         if(xLabels.count == 1){
-            xStart = canvasMargin + yLabelHoldWidth + CAM_XYCOORDINATE_SAFE_OFFSET + (rectWidth - canvasMargin * 2 - CAM_XYCOORDINATE_SAFE_OFFSET * 2 - yLabelHoldWidth) / 2;
+            xStart = canvasMargin + yLabelHoldWidth + canvasPadding + (rectWidth - canvasMargin * 2 - canvasPadding * 2 - yLabelHoldWidth) / 2;
         }else{
-            xStep = (rectWidth - canvasMargin * 2 - CAM_XYCOORDINATE_SAFE_OFFSET * 2 - yLabelHoldWidth) / (xLabels.count - 1);
+            xStep = (rectWidth - canvasMargin * 2 - canvasPadding * 2 - yLabelHoldWidth) / (xLabels.count - 1);
         }
         
         CGFloat xPoint = xStart;
@@ -197,21 +197,21 @@
         switch (profile.gridStyle) {
             case CAMXYAxisGridStyleDependOnStep:
             {
-                CGFloat yGridPosition = yMax - CAM_XYCOORDINATE_SAFE_OFFSET;
+                CGFloat yGridPosition = yMax - canvasPadding;
                 while (true) {
-                    CGContextMoveToPoint(context, xMin + CAM_XYCOORDINATE_SAFE_OFFSET, yGridPosition);
-                    CGContextAddLineToPoint(context, xMax - CAM_XYCOORDINATE_SAFE_OFFSET, yGridPosition);
+                    CGContextMoveToPoint(context, xMin + canvasPadding, yGridPosition);
+                    CGContextAddLineToPoint(context, xMax - canvasPadding, yGridPosition);
                     CGContextStrokePath(context);
                     yGridPosition -= profile.gridStepSize;
-                    if(yGridPosition < yMin + CAM_XYCOORDINATE_SAFE_OFFSET) break;
+                    if(yGridPosition < yMin + canvasPadding) break;
                 }
             }
                 break;
             case CAMXYAxisGridStyleDependOnPositions:{
                 for (NSNumber *yPosNum in yPositions) {
                     CGFloat yGridPosition = [yPosNum floatValue];
-                    CGContextMoveToPoint(context, xMin + CAM_XYCOORDINATE_SAFE_OFFSET, yGridPosition);
-                    CGContextAddLineToPoint(context, xMax - CAM_XYCOORDINATE_SAFE_OFFSET, yGridPosition);
+                    CGContextMoveToPoint(context, xMin + canvasPadding, yGridPosition);
+                    CGContextAddLineToPoint(context, xMax - canvasPadding, yGridPosition);
                     CGContextStrokePath(context);
                 }
             }
@@ -226,13 +226,13 @@
         switch (profile.gridStyle) {
             case CAMXYAxisGridStyleDependOnStep:
             {
-                CGFloat xGridPosition = xMin + CAM_XYCOORDINATE_SAFE_OFFSET;
+                CGFloat xGridPosition = xMin + canvasPadding;
                 while (true) {
-                    CGContextMoveToPoint(context, xGridPosition, yMin + CAM_XYCOORDINATE_SAFE_OFFSET);
-                    CGContextAddLineToPoint(context, xGridPosition, yMax - CAM_XYCOORDINATE_SAFE_OFFSET);
+                    CGContextMoveToPoint(context, xGridPosition, yMin + canvasPadding);
+                    CGContextAddLineToPoint(context, xGridPosition, yMax - canvasPadding);
                     CGContextStrokePath(context);
                     xGridPosition += profile.gridStepSize;
-                    if(xGridPosition > xMax - CAM_XYCOORDINATE_SAFE_OFFSET) break;
+                    if(xGridPosition > xMax - canvasPadding) break;
                 }
             }
                 break;
@@ -240,8 +240,8 @@
             {
                 for (NSNumber *xPosNum in xPositions) {
                     CGFloat xGridPosition = [xPosNum floatValue];
-                    CGContextMoveToPoint(context, xGridPosition, yMin + CAM_XYCOORDINATE_SAFE_OFFSET);
-                    CGContextAddLineToPoint(context, xGridPosition, yMax - CAM_XYCOORDINATE_SAFE_OFFSET);
+                    CGContextMoveToPoint(context, xGridPosition, yMin + canvasPadding);
+                    CGContextAddLineToPoint(context, xGridPosition, yMax - canvasPadding);
                     CGContextStrokePath(context);
                 }
             }

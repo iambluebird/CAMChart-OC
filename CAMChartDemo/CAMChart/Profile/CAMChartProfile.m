@@ -20,6 +20,7 @@
     CAMChartProfile *newProfile = [[CAMChartProfile alloc] init];
     
     newProfile.margin = self.margin;
+    newProfile.padding = self.padding;
     
     newProfile.themeColor = self.themeColor;
     newProfile.backgroundColor = self.backgroundColor;
@@ -42,6 +43,13 @@
         _margin = 20;
     }
     return _margin;
+}
+
+- (CGFloat)padding{
+    if(_padding <= 0){
+        _padding = 10;
+    }
+    return _padding;
 }
 
 - (UIColor *)backgroundColor{
