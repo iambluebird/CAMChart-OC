@@ -83,6 +83,17 @@
     [_lineChart drawChart];
     [self.view addSubview:_lineChart];
     
+    
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 400, 200, 40);
+    btn.backgroundColor = [UIColor purpleColor];
+    [btn setTitle:@"click" forState:UIControlStateNormal];
+    btn.titleLabel.textColor = [UIColor whiteColor];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,6 +116,16 @@
 }
 
 
+-(void)btnClick:(id)sender{
+    _lineChart.xUnit = @"Hello,world!";
+    _lineChart.yUnit = @"Welcome";
+    
+    NSArray *data03 = @[@33, @57, @78, @12, @68];
+    
+    [_lineChart addChartData:data03];
+    [_lineChart drawChart];
+    [_lineChart setNeedsDisplay];
+}
 
 
 

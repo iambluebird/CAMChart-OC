@@ -20,9 +20,10 @@
 /**
  绘制XY坐标系
 
- @param rect 视图区域
+ @param rect 整体视图区域
  @param profile 配置信息
- @param canvasMargin 图表可视区域边距
+ @param canvasMargin 图表外边距：轴与整体视图之间的边距
+ @param canvasPadding 图表内边距：轴与可视区域之间的距离
  @param xUnit X坐标单位标签内容
  @param yUnit Y坐标单位标签内容
  @param xLabels X坐标标签

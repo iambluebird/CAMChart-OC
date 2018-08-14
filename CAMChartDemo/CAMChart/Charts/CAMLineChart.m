@@ -18,6 +18,8 @@
     NSMutableArray *_xPositions;                            //x轴数据节点，如果只有一个数据点的时候，这个节点在X轴中间
     NSMutableArray *_chartLines;                            //multiChartDatas 映射到图表上的各个线条，存储的是array of point
     
+    //将Layer层数据保持到全局来，重绘时需要将原有Layer全部清除掉
+    NSMutableArray *_chartLineLayers, *_pointLayers, *_pointLabelLayers;
 }
 
 @property (nonatomic, strong) NSMutableArray *multiChartDatas;      //存储图表数据，支持多个数据线条
@@ -38,6 +40,7 @@
     if(self.frame.size.width == 0 || self.frame.size.height == 0){
         @throw [NSException exceptionWithName:@"frame未指定" reason:@"请在调用 drawChart 函数之前设置图表的Frame." userInfo:nil];
     }
+    [self resetOldDatas];
     [self calculationFeatureData];
     [self calculationYLabels];
     [self calculationXLables];
@@ -46,6 +49,8 @@
     [self mapChartDataToCanvas];
     [self drawChartLines];
 }
+
+
 
 
 
@@ -101,6 +106,51 @@
 
 
 #pragma mark - 视图计算函数
+
+/**
+ 清理上一次绘制时的历史数据，尤其是已绘制图层需要清理掉
+ */
+-(void)resetOldDatas{
+    if(_xPositions){
+        [_xPositions removeAllObjects];
+    }else{
+        _xPositions = [NSMutableArray new];
+    }
+    
+    if(_chartLines){
+        [_chartLines removeAllObjects];
+    }else{
+        _chartLines = [NSMutableArray new];
+    }
+    
+    if(_chartLineLayers){
+        for (CALayer *layer in _chartLineLayers) {
+            [layer removeFromSuperlayer];
+        }
+        [_chartLineLayers removeAllObjects];
+    }else{
+        _chartLineLayers = [NSMutableArray new];
+    }
+    
+    if(_pointLayers){
+        for (CALayer *layer in _pointLayers) {
+            [layer removeFromSuperlayer];
+        }
+        [_pointLayers removeAllObjects];
+    }else{
+        _pointLayers = [NSMutableArray new];
+    }
+    
+    if(_pointLabelLayers){
+        for (CALayer *layer in _pointLabelLayers) {
+            [layer removeFromSuperlayer];
+        }
+        [_pointLabelLayers removeAllObjects];
+    }else{
+        _pointLabelLayers = [NSMutableArray new];
+    }
+}
+
 
 /**
  计算数据特征值，提取出统计图需要表示的最大值和最小值，
@@ -219,7 +269,7 @@
  */
 -(void)calculationXPositions{
     //计算出x坐标数据节点
-    _xPositions = [NSMutableArray new];
+//    _xPositions = [NSMutableArray new];
     if([self.xLabels count]){
         CGFloat xStart = self.chartProfile.margin + _yLabelHoldWidth + self.chartProfile.padding;
         CGFloat xStep = 0;
@@ -249,7 +299,7 @@
 -(void)mapChartDataToCanvas{
     //effectiveValue 是这个图表能够展示的有效数级值，根据这个数值，通过百分比运算可以得知需要展示的数据的Y坐标
     CGFloat effectiveValue = _maxTruncValue - _minTruncValue;
-    _chartLines = [NSMutableArray new];
+//    _chartLines = [NSMutableArray new];
     //读取每条线条数据
     for (NSArray* chartDatas in self.multiChartDatas) {
         //读取线条数据中的每个数据节点
@@ -271,6 +321,9 @@
  将数据线绘制到视图上
  */
 -(void)drawChartLines{
+    
+    //绘制顺序：线条 -> 节点 -> 节点标签
+    
     NSArray *chartLinePaths = [self makeDataLines];
     
     for (NSInteger i = 0; i < chartLinePaths.count; i++) {
@@ -284,9 +337,11 @@
         chartLineLayer.path = linePath.CGPath;
         
         [self.layer addSublayer:chartLineLayer];
+        [_chartLineLayers addObject:chartLineLayer];
         
         
         CALayer *pointLayer = [self pointLayerWithChartLineIndex:i];
+        [_pointLayers addObject:pointLayer];
         
         if(self.chartProfile.animationDisplay){
             [CATransaction begin];
@@ -299,6 +354,8 @@
     }
     
     NSArray* pointLabelLayers = [self makePointLabels];
+    [_pointLabelLayers addObjectsFromArray:pointLabelLayers];
+    
     if(self.chartProfile.animationDisplay){
         for (CALayer *layer in pointLabelLayers) {
             [layer addAnimation:[self animationForChartPoint] forKey:nil];
