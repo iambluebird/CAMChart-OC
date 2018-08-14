@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C4F445B2122C304006B45A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F445A2122C304006B45A9 /* README.md */; };
 		9CB2454D211BD58A003BF459 /* CAMCoordinateAxisKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */; };
 		9CB24552211BF015003BF459 /* CAMBaseChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24551211BF015003BF459 /* CAMBaseChart.m */; };
 		9CB24555211BF04E003BF459 /* CAMLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24554211BF04E003BF459 /* CAMLineChart.m */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		9C4F4457212299D4006B45A9 /* CAMChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMChart.h; sourceTree = "<group>"; };
+		9C4F445A2122C304006B45A9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		9CB2454B211BD58A003BF459 /* CAMCoordinateAxisKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCoordinateAxisKit.h; sourceTree = "<group>"; };
 		9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCoordinateAxisKit.m; sourceTree = "<group>"; };
 		9CB24550211BF015003BF459 /* CAMBaseChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMBaseChart.h; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		9CDB129F2119F7AB00F5C733 = {
 			isa = PBXGroup;
 			children = (
+				9C4F445A2122C304006B45A9 /* README.md */,
 				9CDB12CF211AE41800F5C733 /* CAMChart */,
 				9CDB12AA2119F7AB00F5C733 /* CAMChartDemo */,
 				9CDB12A92119F7AB00F5C733 /* Products */,
@@ -242,6 +245,7 @@
 			files = (
 				9CDB12B82119F7AC00F5C733 /* LaunchScreen.storyboard in Resources */,
 				9CDB12B52119F7AC00F5C733 /* Assets.xcassets in Resources */,
+				9C4F445B2122C304006B45A9 /* README.md in Resources */,
 				9CDB12B32119F7AB00F5C733 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
