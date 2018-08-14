@@ -1,4 +1,4 @@
 #  CAMChart - ObjC
 
 
-! [效果图] (./images/linechart-demo-01.png)
+![效果图](./images/linechart-demo-01.png)
