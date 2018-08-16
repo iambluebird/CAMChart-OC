@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9C4F445B2122C304006B45A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C4F445A2122C304006B45A9 /* README.md */; };
+		9C9B7EDB2123FEBC002F9C5F /* CAMCircleProgressChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B7ED72123FEBB002F9C5F /* CAMCircleProgressChart.m */; };
+		9C9B7EDC2123FEBC002F9C5F /* CAMUICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B7ED92123FEBC002F9C5F /* CAMUICountingLabel.m */; };
+		9C9B7EDF212417D1002F9C5F /* CircleProgressChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B7EDE212417D1002F9C5F /* CircleProgressChartViewController.m */; };
+		9C9B7EE221241F4D002F9C5F /* CAMCircleAxisProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B7EE121241F4D002F9C5F /* CAMCircleAxisProfile.m */; };
+		9C9B7EE52124315B002F9C5F /* CAMCircleProgressChartProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9B7EE42124315B002F9C5F /* CAMCircleProgressChartProfile.m */; };
 		9CB2454D211BD58A003BF459 /* CAMCoordinateAxisKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */; };
 		9CB24552211BF015003BF459 /* CAMBaseChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24551211BF015003BF459 /* CAMBaseChart.m */; };
 		9CB24555211BF04E003BF459 /* CAMLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB24554211BF04E003BF459 /* CAMLineChart.m */; };
@@ -31,6 +36,16 @@
 /* Begin PBXFileReference section */
 		9C4F4457212299D4006B45A9 /* CAMChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMChart.h; sourceTree = "<group>"; };
 		9C4F445A2122C304006B45A9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		9C9B7ED72123FEBB002F9C5F /* CAMCircleProgressChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMCircleProgressChart.m; sourceTree = "<group>"; };
+		9C9B7ED82123FEBB002F9C5F /* CAMUICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMUICountingLabel.h; sourceTree = "<group>"; };
+		9C9B7ED92123FEBC002F9C5F /* CAMUICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAMUICountingLabel.m; sourceTree = "<group>"; };
+		9C9B7EDA2123FEBC002F9C5F /* CAMCircleProgressChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMCircleProgressChart.h; sourceTree = "<group>"; };
+		9C9B7EDD212417D1002F9C5F /* CircleProgressChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleProgressChartViewController.h; sourceTree = "<group>"; };
+		9C9B7EDE212417D1002F9C5F /* CircleProgressChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleProgressChartViewController.m; sourceTree = "<group>"; };
+		9C9B7EE021241F4D002F9C5F /* CAMCircleAxisProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCircleAxisProfile.h; sourceTree = "<group>"; };
+		9C9B7EE121241F4D002F9C5F /* CAMCircleAxisProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCircleAxisProfile.m; sourceTree = "<group>"; };
+		9C9B7EE32124315B002F9C5F /* CAMCircleProgressChartProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCircleProgressChartProfile.h; sourceTree = "<group>"; };
+		9C9B7EE42124315B002F9C5F /* CAMCircleProgressChartProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCircleProgressChartProfile.m; sourceTree = "<group>"; };
 		9CB2454B211BD58A003BF459 /* CAMCoordinateAxisKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMCoordinateAxisKit.h; sourceTree = "<group>"; };
 		9CB2454C211BD58A003BF459 /* CAMCoordinateAxisKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAMCoordinateAxisKit.m; sourceTree = "<group>"; };
 		9CB24550211BF015003BF459 /* CAMBaseChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAMBaseChart.h; sourceTree = "<group>"; };
@@ -90,6 +105,10 @@
 				9CB2455F212134D1003BF459 /* CAMXYAxisProfile.m */,
 				9CB24564212189B3003BF459 /* CAMLineChartProfile.h */,
 				9CB24565212189B3003BF459 /* CAMLineChartProfile.m */,
+				9C9B7EE021241F4D002F9C5F /* CAMCircleAxisProfile.h */,
+				9C9B7EE121241F4D002F9C5F /* CAMCircleAxisProfile.m */,
+				9C9B7EE32124315B002F9C5F /* CAMCircleProgressChartProfile.h */,
+				9C9B7EE42124315B002F9C5F /* CAMCircleProgressChartProfile.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -97,6 +116,10 @@
 		9CB245672121EF3A003BF459 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				9C9B7EDA2123FEBC002F9C5F /* CAMCircleProgressChart.h */,
+				9C9B7ED72123FEBB002F9C5F /* CAMCircleProgressChart.m */,
+				9C9B7ED82123FEBB002F9C5F /* CAMUICountingLabel.h */,
+				9C9B7ED92123FEBC002F9C5F /* CAMUICountingLabel.m */,
 				9CB24550211BF015003BF459 /* CAMBaseChart.h */,
 				9CB24551211BF015003BF459 /* CAMBaseChart.m */,
 				9CB24553211BF04E003BF459 /* CAMLineChart.h */,
@@ -171,6 +194,8 @@
 				9CDB12C72119F8C300F5C733 /* NavigationViewController.m */,
 				9CDB12C92119FD0600F5C733 /* LineChartViewController.h */,
 				9CDB12CA2119FD0600F5C733 /* LineChartViewController.m */,
+				9C9B7EDD212417D1002F9C5F /* CircleProgressChartViewController.h */,
+				9C9B7EDE212417D1002F9C5F /* CircleProgressChartViewController.m */,
 			);
 			path = DemoViewControllers;
 			sourceTree = "<group>";
@@ -259,6 +284,7 @@
 			files = (
 				9CB24563212135C4003BF459 /* CAMColorKit.m in Sources */,
 				9CDB12D5211AF0E700F5C733 /* CAMChartProfile.m in Sources */,
+				9C9B7EDF212417D1002F9C5F /* CircleProgressChartViewController.m in Sources */,
 				9CDB12B02119F7AB00F5C733 /* ViewController.m in Sources */,
 				9CDB12CE211A029D00F5C733 /* BaseViewController.m in Sources */,
 				9CDB12C82119F8C300F5C733 /* NavigationViewController.m in Sources */,
@@ -269,7 +295,11 @@
 				9CDB12AD2119F7AB00F5C733 /* AppDelegate.m in Sources */,
 				9CB24559211C34CE003BF459 /* CAMTextKit.m in Sources */,
 				9CB24566212189B3003BF459 /* CAMLineChartProfile.m in Sources */,
+				9C9B7EE52124315B002F9C5F /* CAMCircleProgressChartProfile.m in Sources */,
+				9C9B7EE221241F4D002F9C5F /* CAMCircleAxisProfile.m in Sources */,
 				9CB24555211BF04E003BF459 /* CAMLineChart.m in Sources */,
+				9C9B7EDC2123FEBC002F9C5F /* CAMUICountingLabel.m in Sources */,
+				9C9B7EDB2123FEBC002F9C5F /* CAMCircleProgressChart.m in Sources */,
 				9CB24560212134D1003BF459 /* CAMXYAxisProfile.m in Sources */,
 				9CDB12D8211AF77A00F5C733 /* CAMChartProfileManager.m in Sources */,
 			);

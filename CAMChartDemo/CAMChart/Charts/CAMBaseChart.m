@@ -72,6 +72,9 @@
 }
 
 - (void)drawChartWithAnimationDisplay:(BOOL)animationDisplay{
+    if(self.frame.size.width == 0 || self.frame.size.height == 0){
+        @throw [NSException exceptionWithName:@"frame未指定" reason:@"请在调用 drawChart 函数之前设置图表的Frame." userInfo:nil];
+    }
 //    [self doesNotRecognizeSelector:_cmd];
     _animationDispayThisTime = animationDisplay;
 }

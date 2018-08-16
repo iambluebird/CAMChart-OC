@@ -10,7 +10,11 @@
 
 @implementation CAMCoordinateAxisKit
 
--(void)drawXYCoordinateWithRect:(CGRect)rect ChartProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin CanvasPadding:(CGFloat)canvasPadding xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels{
+-(void)drawXYCoordinateWithRect:(CGRect)rect AxisProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin CanvasPadding:(CGFloat)canvasPadding xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels{
+    
+    /*
+     这个函数好丑，回头重写
+     */
     
     CGFloat rectWidth = CGRectGetWidth(rect);
     CGFloat rectHeight = CGRectGetHeight(rect);
@@ -279,7 +283,61 @@
 
 
 
-
+- (void)drawCircleCoordinateWithRect:(CGRect)rect AxisProfile:(CAMCircleAxisProfile *)profile TopTag:(NSString *)topTag bottomTag:(NSString *)bottomTag ValueRect:(CGRect)valueRect{
+    
+    //此方法调用前必须确保能得到图形上下文
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //保存一下初始的上下文场景
+    CGContextSaveGState(context);
+    
+    //设置Chart全局绘制场景，使用圆角模式
+    CGContextSetLineCap(context, kCGLineCapRound);
+    CGContextSetLineJoin(context, kCGLineJoinRound);
+    
+    //绘制环形背景
+    if(profile.showAxis){
+        CGContextSaveGState(context);   //开启场景 A - 绘制环形背景
+        
+        CGContextSetLineWidth(context, profile.lineWidth);
+        CGContextSetStrokeColorWithColor(context, profile.lineColor.CGColor);
+        
+        CGPoint circleCenterPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
+        CGPoint circleStartPoint = CGPointMake(CGRectGetMaxX(rect), CGRectGetMidY(rect));
+        CGFloat circleRadius = rect.size.width / 2.0f;
+        
+        CGContextMoveToPoint(context, circleStartPoint.x, circleStartPoint.y);
+        CGContextAddArc(context, circleCenterPoint.x, circleCenterPoint.y, circleRadius, 0, (CGFloat)(2 * M_PI), 0);
+        CGContextStrokePath(context);
+        
+        CGContextRestoreGState(context);    //结束场景 A - 绘制环形背景
+    }
+    
+    //绘制上标签
+    CGFloat tagMaxWidth = CGRectGetWidth(rect) * 2 / 3;     //Tag标签最大显示宽度为可视区域的 2/3
+    if([topTag length]){
+        CGSize size = [CAMTextKit sizeOfString:topTag Font:profile.topTagFont Width:tagMaxWidth];
+        CGRect textRect = CGRectMake(CGRectGetMidX(valueRect) - size.width / 2,
+                                     CGRectGetMinY(valueRect) - size.height - profile.topTagMargin,
+                                     size.width,
+                                     size.height);
+        [CAMTextKit drawText:topTag InRect:textRect Font:profile.topTagFont Color:profile.topTagColor];
+    }
+    
+    //绘制下标签
+    if([bottomTag length]){
+        CGSize size = [CAMTextKit sizeOfString:bottomTag Font:profile.bottomTagFont Width:tagMaxWidth];
+        CGRect textRect = CGRectMake(CGRectGetMidX(valueRect) - size.width / 2,
+                                     CGRectGetMaxY(valueRect) + profile.bottomTagMargin,
+                                     size.width,
+                                     size.height);
+        [CAMTextKit drawText:bottomTag InRect:textRect Font:profile.bottomTagFont Color:profile.bottomTagColor];
+    }
+    
+    
+    CGContextRestoreGState(context);    //恢复到初始场景
+    
+}
 
 
 

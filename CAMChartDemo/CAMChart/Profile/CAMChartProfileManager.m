@@ -80,8 +80,8 @@ static id _instance = nil;
         _defaultProfile.animationDisplay = YES;
         _defaultProfile.animationDuration = 1.0f;
         
-        
-        
+
+#pragma mark - Line Chart
         /* XY坐标轴默认样式 */
         _defaultProfile.xyAxis = [[CAMXYAxisProfile alloc] initWithThemeColor:_defaultProfile.themeColor];
         
@@ -117,7 +117,31 @@ static id _instance = nil;
         _defaultProfile.lineChart.pointLabelFontColor = CAMHEXCOLOR(@"4682b4");
         
         
+#pragma mark - Circle Progress Chart
+        /* Circle Axis 默认样式 */
+        _defaultProfile.circleAxis.showAxis = YES;
+        _defaultProfile.circleAxis.lineWidth = 10;
+        _defaultProfile.circleAxis.lineColor = CAMHEXCOLOR(@"f5f5f5");
+        _defaultProfile.circleAxis.topTagFont = [UIFont systemFontOfSize:11.0f];
+        _defaultProfile.circleAxis.topTagColor = CAMHEXCOLOR(@"778899");
+        _defaultProfile.circleAxis.topTagMargin = 5;
+        _defaultProfile.circleAxis.bottomTagFont = [UIFont systemFontOfSize:11.0f];
+        _defaultProfile.circleAxis.bottomTagColor = CAMHEXCOLOR(@"778899");
+        _defaultProfile.circleAxis.bottomTagMargin = 5;
         
+        
+        /* Circle Progress Chart 默认样式 */
+        _defaultProfile.circleProgress.progressType = CAMProgressValueTypeNumber;
+        _defaultProfile.circleProgress.lineWidth = 10;
+        _defaultProfile.circleProgress.lineColor = CAMHEXCOLOR(@"20b2aa");
+        _defaultProfile.circleProgress.progressValueFont = [UIFont systemFontOfSize:15.0f];
+        _defaultProfile.circleProgress.progressValueColor = CAMHEXCOLOR(@"20b2aa");
+        _defaultProfile.circleProgress.progressValueFormat = @"";
+        _defaultProfile.circleProgress.startAt = CAMProgressStartAtTop;
+        _defaultProfile.circleProgress.clockwiseAs = CAMProgressClockwiseAsYES;
+        
+        
+#pragma mark - 色彩表
         /* 配色方案 */
         NSMutableArray *lineColors = [NSMutableArray new];
         [lineColors addObject:CAMHEXCOLOR(@"20b2aa")];

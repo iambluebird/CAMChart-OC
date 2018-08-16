@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "CAMXYAxisProfile.h"
+#import "CAMCircleAxisProfile.h"
+
 #import "CAMLineChartProfile.h"
+#import "CAMCircleProgressChartProfile.h"
 
 
 
@@ -34,8 +38,10 @@
  子项配置
  */
 @property(nonatomic, strong) CAMXYAxisProfile *xyAxis;      //XY坐标配置信息
-@property(nonatomic, strong) CAMLineChartProfile *lineChart;//折线图配置信息
+@property(nonatomic, strong) CAMCircleAxisProfile *circleAxis;  //圆环形坐标配置信息
 
+@property(nonatomic, strong) CAMLineChartProfile *lineChart;//折线图配置信息
+@property(nonatomic, strong) CAMCircleProgressChartProfile *circleProgress;     //环形进度图配置信息
 
 /**
  动画配置

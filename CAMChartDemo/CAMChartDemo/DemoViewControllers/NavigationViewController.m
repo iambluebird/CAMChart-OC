@@ -8,9 +8,11 @@
 
 #import "NavigationViewController.h"
 #import "LineChartViewController.h"
+#import "CircleProgressChartViewController.h"
 
 typedef NS_ENUM(NSUInteger, CAMChartType) {
-    CAMChartTypeLine = 0
+    CAMChartTypeLine = 0,
+    CAMChartTypeCircleProgress,
 };
 
 @interface NavigationViewController ()<UITableViewDelegate, UITableViewDataSource>{
@@ -31,6 +33,7 @@ typedef NS_ENUM(NSUInteger, CAMChartType) {
     
     _charts = [[NSMutableArray alloc] init];
     [_charts addObject:@"LineChart Demo"];
+    [_charts addObject:@"Circle Progress Chart Demo"];
     
     [self.view addSubview:self.tableView];
     
@@ -72,7 +75,9 @@ typedef NS_ENUM(NSUInteger, CAMChartType) {
         case CAMChartTypeLine:
             vc = [[LineChartViewController alloc] init];
             break;
-            
+        case CAMChartTypeCircleProgress:
+            vc = [[CircleProgressChartViewController alloc] init];
+            break;
         default:
             vc = [[LineChartViewController alloc] init];
             break;

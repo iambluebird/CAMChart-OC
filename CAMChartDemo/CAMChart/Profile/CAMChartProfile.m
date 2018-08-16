@@ -28,7 +28,10 @@
     newProfile.chartColors = [self.chartColors mutableCopy];
     
     newProfile.xyAxis = [self.xyAxis mutableCopy];
+    newProfile.circleAxis = [self.circleAxis mutableCopy];
+    
     newProfile.lineChart = [self.lineChart mutableCopy];
+    newProfile.circleProgress = [self.circleProgress mutableCopy];
     
     newProfile.animationDisplay = self.animationDisplay;
     newProfile.animationDuration = self.animationDuration;
@@ -80,11 +83,25 @@
     return _xyAxis;
 }
 
+- (CAMCircleAxisProfile *)circleAxis{
+    if(!_circleAxis){
+        _circleAxis = [[CAMCircleAxisProfile alloc] init];
+    }
+    return _circleAxis;
+}
+
 - (CAMLineChartProfile *)lineChart{
     if(!_lineChart){
         _lineChart = [[CAMLineChartProfile alloc] init];
     }
     return _lineChart;
+}
+
+- (CAMCircleProgressChartProfile *)circleProgress{
+    if(!_circleProgress){
+        _circleProgress = [[CAMCircleProgressChartProfile alloc] init];
+    }
+    return _circleProgress;
 }
 
 

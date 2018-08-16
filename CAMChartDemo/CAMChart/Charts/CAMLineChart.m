@@ -42,9 +42,9 @@
 
 - (void)drawChartWithAnimationDisplay:(BOOL)animationDisplay{
     [super drawChartWithAnimationDisplay:animationDisplay];
-    if(self.frame.size.width == 0 || self.frame.size.height == 0){
-        @throw [NSException exceptionWithName:@"frame未指定" reason:@"请在调用 drawChart 函数之前设置图表的Frame." userInfo:nil];
-    }
+//    if(self.frame.size.width == 0 || self.frame.size.height == 0){
+//        @throw [NSException exceptionWithName:@"frame未指定" reason:@"请在调用 drawChart 函数之前设置图表的Frame." userInfo:nil];
+//    }
     [self resetOldDatas];
     [self calculationFeatureData];
     [self calculationYLabels];
@@ -100,7 +100,7 @@
 //坐标系的绘制实在 drawRect 重载方法里完成的
 - (void)drawRect:(CGRect)rect{
     CAMCoordinateAxisKit *axisKit = [[CAMCoordinateAxisKit alloc] init];
-    [axisKit drawXYCoordinateWithRect:rect ChartProfile:self.chartProfile.xyAxis CanvasMargin: self.chartProfile.margin CanvasPadding: self.chartProfile.padding xUnit:self.xUnit yUnit:self.yUnit xLabels:self.xLabels yLabels:self.yLabels];
+    [axisKit drawXYCoordinateWithRect:rect AxisProfile:self.chartProfile.xyAxis CanvasMargin: self.chartProfile.margin CanvasPadding: self.chartProfile.padding xUnit:self.xUnit yUnit:self.yUnit xLabels:self.xLabels yLabels:self.yLabels];
     [super drawRect:rect];
 }
 

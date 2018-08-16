@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CAMMacroDefinition.h"
 #import "CAMXYAxisProfile.h"
+#import "CAMCircleAxisProfile.h"
 #import "CAMTextKit.h"
 
 
@@ -33,6 +34,19 @@
  @param xLabels X坐标标签
  @param yLabels Y坐标标签
  */
--(void)drawXYCoordinateWithRect:(CGRect)rect ChartProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin CanvasPadding:(CGFloat)canvasPadding xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels;
+-(void)drawXYCoordinateWithRect:(CGRect)rect AxisProfile:(CAMXYAxisProfile*)profile CanvasMargin:(CGFloat)canvasMargin CanvasPadding:(CGFloat)canvasPadding xUnit:(nullable NSString*)xUnit yUnit:(nullable NSString*)yUnit xLabels:(nullable NSArray*)xLabels yLabels:(nullable NSArray*)yLabels;
+
+
+
+/**
+ 绘制圆环型坐标系
+
+ @param rect 坐标视图区域
+ @param profile 配置信息
+ @param topTag 上标签内容
+ @param bottomTag 下标签内容
+ @param valueRect 值标签显示区域
+ */
+-(void)drawCircleCoordinateWithRect:(CGRect)rect AxisProfile:(CAMCircleAxisProfile *)profile TopTag:(NSString*)topTag bottomTag:(NSString*)bottomTag ValueRect:(CGRect)valueRect;
 
 @end

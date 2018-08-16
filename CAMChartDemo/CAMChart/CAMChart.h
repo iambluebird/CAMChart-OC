@@ -9,3 +9,4 @@
 #import "CAMColorKit.h"
 #import "CAMChartProfileManager.h"
 #import "CAMLineChart.h"
+#import "CAMCircleProgressChart.h"
