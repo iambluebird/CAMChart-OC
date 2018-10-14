@@ -35,3 +35,7 @@ chart_0.bottomTag = @"camchart";
 
 [chart_0 drawChart];
 ```
+
+
+- [ ] `IBackgroundColorable` 接口升级，支持渐变色
+
